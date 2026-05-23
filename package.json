@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:naturavida_app": "node dist/naturavida_app/server/server.mjs"
+    "serve:ssr:naturavida_app": "node dist/naturavida_app/server/server.mjs",
+    "json-server": "json-server --watch db/db.json --port 3000"
   },
   "private": true,
   "packageManager": "npm@11.12.1",
@@ -31,6 +32,7 @@
     "@types/express": "^5.0.1",
     "@types/node": "^20.17.19",
     "jsdom": "^28.0.0",
+    "json-server": "^1.0.0-beta.15",
     "prettier": "^3.8.1",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"

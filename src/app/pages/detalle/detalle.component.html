@@ -1,0 +1,85 @@
+@if (toast.visible) {
+  <div class="toast-msg">{{ toast.mensaje }}</div>
+}
+
+<div class="detalle-container">
+  <a routerLink="/catalogo" class="back-link">
+    ← Volver al catálogo
+  </a>
+
+  @if (cargando) {
+    <div class="loading-state">
+      <div class="spinner"></div>
+      <p>Cargando producto...</p>
+    </div>
+  } @else if (!producto) {
+    <div class="error-state">
+      <h3>Producto no encontrado</h3>
+      <a routerLink="/catalogo" class="btn-primary">Ver catálogo</a>
+    </div>
+  } @else {
+    <div class="detalle-grid">
+      <div class="detalle-image-col">
+        <div class="img-wrapper">
+          <img [src]="producto.imagen" [alt]="producto.nombre">
+        </div>
+        <div class="badges-row">
+          <span class="badge green">Natural</span>
+          <span class="badge green">Cruelty-Free</span>
+          <span class="badge green">Eco</span>
+        </div>
+      </div>
+
+      <div class="detalle-info-col">
+        <div class="breadcrumb">
+          <a routerLink="/catalogo">Productos</a>
+          <span>/</span>
+          <a [routerLink]="['/catalogo']" [queryParams]="{categoria: producto.categoria}">{{ getCategoriaLabel() }}</a>
+          <span>/</span>
+          <span>{{ producto.nombre }}</span>
+        </div>
+
+        <span class="marca-badge">{{ producto.marca }}</span>
+        <h1>{{ producto.nombre }}</h1>
+        <p class="detalle-sub">{{ producto.detalle }}</p>
+
+        <div class="price-row">
+          <span class="price">S/ {{ producto.precio.toFixed(2) }}</span>
+          <span class="stock-badge">En stock</span>
+        </div>
+
+        <div class="tabs">
+          <button class="tab-btn" [class.active]="tabActiva === 'descripcion'" (click)="setTab('descripcion')">Descripción</button>
+          <button class="tab-btn" [class.active]="tabActiva === 'modo'" (click)="setTab('modo')">Modo de uso</button>
+          <button class="tab-btn" [class.active]="tabActiva === 'ingredientes'" (click)="setTab('ingredientes')">Ingredientes</button>
+        </div>
+        <div class="tab-content">
+          @if (tabActiva === 'descripcion') { <p>{{ producto.descripcion }}</p> }
+          @if (tabActiva === 'modo') { <p>{{ producto.modoUso }}</p> }
+          @if (tabActiva === 'ingredientes') { <p>{{ producto.ingredientes }}</p> }
+        </div>
+
+        <div class="cantidad-row">
+          <span class="cantidad-label">Cantidad</span>
+          <div class="cantidad-ctrl">
+            <button (click)="cambiarCantidad(-1)">−</button>
+            <span>{{ cantidad }}</span>
+            <button (click)="cambiarCantidad(1)">+</button>
+          </div>
+        </div>
+
+        <div class="action-btns">
+          <button class="btn-add-cart" (click)="agregarAlCarrito()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 01-8 0"></path>
+            </svg>
+            Añadir al carrito
+          </button>
+          <a routerLink="/carrito" class="btn-go-cart">Ver carrito →</a>
+        </div>
+      </div>
+    </div>
+  }
+</div>

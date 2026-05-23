@@ -1,0 +1,124 @@
+@if (toast.visible) {
+  <div class="toast-msg" [class.toast-error]="toast.tipo === 'error'">{{ toast.mensaje }}</div>
+}
+
+<div class="admin-container">
+  <div class="admin-header">
+    <div>
+      <h1>Panel de Administración</h1>
+      <p>Gestión de productos del catálogo</p>
+    </div>
+    <button class="btn-new" (click)="abrirNuevo()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+      Nuevo producto
+    </button>
+  </div>
+
+  <!-- FORMULARIO -->
+  @if (mostrarFormulario) {
+    <div class="form-panel">
+      <div class="form-panel-header">
+        <h3>{{ editando ? 'Editar producto' : 'Nuevo producto' }}</h3>
+        <button class="btn-close-form" (click)="cancelar()">✕</button>
+      </div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Nombre *</label>
+          <input type="text" [(ngModel)]="form.nombre" placeholder="Nombre del producto">
+        </div>
+        <div class="form-group">
+          <label>Detalle (ej: 100ml)</label>
+          <input type="text" [(ngModel)]="form.detalle" placeholder="250ml, 100g...">
+        </div>
+        <div class="form-group">
+          <label>Precio (S/) *</label>
+          <input type="number" [(ngModel)]="form.precio" min="0" step="0.5">
+        </div>
+        <div class="form-group">
+          <label>Categoría</label>
+          <select [(ngModel)]="form.categoria">
+            @for (c of categorias; track c) {
+              <option [value]="c">{{ c }}</option>
+            }
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Marca</label>
+          <select [(ngModel)]="form.marca">
+            @for (m of marcas; track m) {
+              <option [value]="m">{{ m }}</option>
+            }
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>URL de imagen</label>
+          <input type="url" [(ngModel)]="form.imagen" placeholder="https://...">
+        </div>
+        <div class="form-group full">
+          <label>Descripción</label>
+          <textarea [(ngModel)]="form.descripcion" rows="2" placeholder="Descripción del producto"></textarea>
+        </div>
+        <div class="form-group full">
+          <label>Modo de uso</label>
+          <textarea [(ngModel)]="form.modoUso" rows="2" placeholder="Instrucciones de uso"></textarea>
+        </div>
+        <div class="form-group full">
+          <label>Ingredientes</label>
+          <textarea [(ngModel)]="form.ingredientes" rows="2" placeholder="Lista de ingredientes"></textarea>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn-save" (click)="guardar()">
+          {{ editando ? 'Actualizar' : 'Guardar producto' }}
+        </button>
+        <button class="btn-cancel" (click)="cancelar()">Cancelar</button>
+      </div>
+    </div>
+  }
+
+  <!-- TABLA -->
+  <div class="tabla-wrapper">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Imagen</th>
+          <th>Nombre</th>
+          <th>Categoría</th>
+          <th>Marca</th>
+          <th>Precio</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (p of productos; track p.id) {
+          <tr>
+            <td><img [src]="p.imagen" [alt]="p.nombre" class="table-img"></td>
+            <td>
+              <div class="td-nombre">{{ p.nombre }}</div>
+              <div class="td-detalle">{{ p.detalle }}</div>
+            </td>
+            <td><span class="cat-tag" [class]="'cat-' + p.categoria">{{ p.categoria }}</span></td>
+            <td>{{ p.marca }}</td>
+            <td class="td-price">S/ {{ p.precio.toFixed(2) }}</td>
+            <td>
+              <div class="action-btns">
+                <button class="btn-edit" (click)="editarProducto(p)" title="Editar">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"></path>
+                    <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                  </svg>
+                </button>
+                <button class="btn-delete" (click)="eliminar(p)" title="Eliminar">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="3 6 5 6 21 6"></polyline>
+                    <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a1 1 0 011-1h4a1 1 0 011 1v2"></path>
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

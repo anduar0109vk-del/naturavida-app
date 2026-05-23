@@ -1,0 +1,60 @@
+<div class="nosotros-page">
+
+  <section class="hero-nosotros">
+    <div class="hero-content">
+      <div class="badge">Nuestra Historia</div>
+      <h1>Cosm&eacute;tica Natural<br><span>para un mundo mejor</span></h1>
+      <p>Desde 2020 acercamos la belleza natural y sostenible a cada hogar peruano.</p>
+    </div>
+  </section>
+
+  <section class="historia-section">
+    <div class="section-inner">
+      <div class="historia-grid">
+        <div class="historia-img">
+          <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&q=80" alt="Nuestra historia">
+        </div>
+        <div class="historia-text">
+          <h2>¿Cómo empezó todo?</h2>
+          <p class="lead">NaturaVida nació en 2020 con un sueño: acercar la cosmética natural y sostenible a todos los hogares.</p>
+          <p>Fundada por un grupo de amantes de la naturaleza y el cuidado personal, nuestra marca se ha convertido en un referente de productos libres de químicos agresivos, cruelty-free y respetuosos con el medio ambiente.</p>
+          <p>Creemos que la belleza real viene de adentro hacia afuera, y por eso cada uno de nuestros productos está formulado con ingredientes puros, orgánicos y de origen ético.</p>
+          <a routerLink="/catalogo" class="btn-primary">Conoce nuestros productos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mv-section">
+    <div class="section-inner">
+      <div class="mv-grid">
+        <div class="mv-card mision">
+          <h3>Misión</h3>
+          <p>Ofrecer productos de cosmética natural de alta calidad que promuevan el bienestar integral, cuidando el planeta y apoyando a comunidades locales.</p>
+        </div>
+        <div class="mv-card vision">
+          <h3>Visión</h3>
+          <p>Ser la marca líder en cosmética natural sostenible de Latinoamérica, inspirando un estilo de vida consciente y respetuoso con el medio ambiente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="valores-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Nuestros Valores</h2>
+        <p>Los principios que guían cada decisión que tomamos</p>
+      </div>
+      <div class="valores-grid">
+        @for (v of valores; track v.titulo) {
+          <div class="valor-card">
+            <h4>{{ v.titulo }}</h4>
+            <p>{{ v.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+</div>

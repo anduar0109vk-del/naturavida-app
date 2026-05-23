@@ -1,0 +1,107 @@
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Cosmética Natural & Sostenible</div>
+    <h1 class="hero-title">
+      Abraza la Pureza<br>
+      <span class="hero-accent">Natural</span> en tu Piel
+    </h1>
+    <p class="hero-subtitle">
+      Descubre nuestra selección premium de productos naturales, orgánicos y sostenibles
+      para tu bienestar. Sin químicos agresivos, con ingredientes que respetan tu piel y el planeta.
+    </p>
+    <div class="hero-actions">
+      <a routerLink="/catalogo" class="btn-primary">Ver Colección Completa →</a>
+      <a routerLink="/nosotros" class="btn-ghost">Conoce nuestra historia</a>
+    </div>
+    <div class="hero-badges">
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Cruelty-Free</span>
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg> Ingredientes Orgánicos</span>
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Envío Rápido</span>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-image-wrapper">
+      <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=600&q=80" alt="Productos naturales premium" loading="eager">
+      <div class="hero-float-card">
+        <div>
+          <strong>4.9/5</strong>
+          <span>+2,400 reseñas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="categorias-section">
+  <div class="section-container">
+    <div class="section-header">
+      <h2>Categorías Destacadas</h2>
+      <p>Encuentra exactamente lo que necesitas</p>
+    </div>
+    <div class="categorias-grid">
+      @for (cat of categorias; track cat.slug) {
+        <a [routerLink]="['/catalogo']" [queryParams]="{categoria: cat.slug}" class="categoria-card">
+          <div class="cat-info">
+            <h3>{{ cat.titulo }}</h3>
+            <p>{{ cat.descripcion }}</p>
+            <span class="cat-link" [style.color]="cat.color">Explorar →</span>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="destacados-section">
+  <div class="section-container">
+    <div class="section-header">
+      <h2>Productos Más Vendidos</h2>
+      <p>Los favoritos de nuestra comunidad</p>
+    </div>
+    <div class="productos-grid">
+      @for (p of destacados; track p.id) {
+        <div class="product-card">
+          <a [routerLink]="['/producto', p.id]" class="product-img-link">
+            <img [src]="p.imagen" [alt]="p.nombre" loading="lazy">
+            <span class="product-cat-badge" [class]="'badge-' + p.categoria">{{ p.categoria }}</span>
+          </a>
+          <div class="product-info">
+            <span class="product-marca">{{ p.marca }}</span>
+            <h4>{{ p.nombre }}</h4>
+            <p class="product-detalle">{{ p.detalle }}</p>
+            <div class="product-footer">
+              <span class="product-price">S/ {{ p.precio.toFixed(2) }}</span>
+              <a [routerLink]="['/producto', p.id]" class="btn-ver">Ver detalle</a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+    <div class="ver-todos">
+      <a routerLink="/catalogo" class="btn-primary">Ver todos los productos</a>
+    </div>
+  </div>
+</section>
+
+<section class="valores-section">
+  <div class="section-container">
+    <div class="valores-grid">
+      <div class="valor-item">
+        <h4>100% Natural</h4>
+        <p>Ingredientes de origen vegetal, sin químicos agresivos</p>
+      </div>
+      <div class="valor-item">
+        <h4>Cruelty-Free</h4>
+        <p>Nunca testado en animales, siempre ético</p>
+      </div>
+      <div class="valor-item">
+        <h4>Sostenible</h4>
+        <p>Empaque eco-friendly y procesos responsables</p>
+      </div>
+      <div class="valor-item">
+        <h4>Comercio Justo</h4>
+        <p>Apoyamos a productores locales peruanos</p>
+      </div>
+    </div>
+  </div>
+</section>

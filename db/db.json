@@ -1,0 +1,282 @@
+{
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "Shampoo de Romero",
+      "detalle": "250ml",
+      "precio": 25,
+      "categoria": "capilar",
+      "marca": "AlmaVerde",
+      "imagen": "https://i.ebayimg.com/images/g/m7kAAeSwS8FovPGc/s-l1600.webp",
+      "descripcion": "Shampoo fortalecedor de romero que estimula el crecimiento capilar y previene la caída.",
+      "modoUso": "Aplicar sobre el cabello húmedo, masajear el cuero cabelludo y enjuagar con abundante agua.",
+      "ingredientes": "Agua, extracto de romero, glicerina, tensioactivos naturales, conservante eco."
+    },
+    {
+      "id": "2",
+      "nombre": "Shampoo de Cebolla",
+      "detalle": "250ml",
+      "precio": 22,
+      "categoria": "capilar",
+      "marca": "BioNatur",
+      "imagen": "https://m.media-amazon.com/images/I/51S5fESzUoL._SS400_.jpg",
+      "descripcion": "Shampoo de cebolla ideal para acelerar el crecimiento del cabello y aportar brillo extremo sin olor a cebolla.",
+      "modoUso": "Aplicar sobre el cuero cabelludo mojado, masajear suavemente y aclarar. Usar 2-3 veces por semana.",
+      "ingredientes": "Extracto de bulbo de cebolla, agua purificada, coco-betaína, aceite esencial de lavanda."
+    },
+    {
+      "id": "3",
+      "nombre": "Shampoo de Coco",
+      "detalle": "250ml",
+      "precio": 28,
+      "categoria": "capilar",
+      "marca": "TerraVital",
+      "imagen": "https://www.yaxcava.com/cdn/shop/products/Yaxcava-Coco-Izquierdo_f2c08cc1-c49b-42bb-96a5-aadba344e210_1000x.jpg?v=1617819633",
+      "descripcion": "Shampoo ultra hidratante de coco para cabellos secos y maltratados.",
+      "modoUso": "Aplicar en el cabello húmedo, frotar hasta hacer espuma y enjuagar bien.",
+      "ingredientes": "Aceite de coco prensado en frío, leche de coco, glicerina vegetal, agua."
+    },
+    {
+      "id": "4",
+      "nombre": "Tónico de Kion",
+      "detalle": "100ml",
+      "precio": 18,
+      "categoria": "capilar",
+      "marca": "AlmaVerde",
+      "imagen": "https://tikafarma.com/cdn/shop/products/Tonico-de-Kion_600x600_crop_center.jpg?v=1642701416",
+      "descripcion": "Tónico capilar a base de kion (jengibre) que combate la caspa y fortalece la raíz.",
+      "modoUso": "Rociar directamente sobre el cuero cabelludo limpio. No necesita enjuague.",
+      "ingredientes": "Extracto de jengibre (kion), agua destilada, aceite esencial de menta."
+    },
+    {
+      "id": "5",
+      "nombre": "Tónico de Cebolla",
+      "detalle": "100ml",
+      "precio": 18,
+      "categoria": "capilar",
+      "marca": "BioNatur",
+      "imagen": "https://feyal.cl/wp-content/uploads/2024/08/KL010039.jpg",
+      "descripcion": "Tratamiento intensivo con extracto de cebolla para evitar la caída del cabello.",
+      "modoUso": "Aplicar en la raíz, masajear por 5 minutos y dejar actuar. Uso diario recomendado.",
+      "ingredientes": "Agua, extracto concentrado de cebolla roja, vitaminas del complejo B."
+    },
+    {
+      "id": "6",
+      "nombre": "Acondicionador de Romero",
+      "detalle": "250ml",
+      "precio": 24,
+      "categoria": "capilar",
+      "marca": "TerraVital",
+      "imagen": "https://www.surnativa.cl/wp-content/uploads/2025/02/Acondicionador-romero-240-ml2.jpg",
+      "descripcion": "Acondicionador desenredante que nutre y da brillo, complementando el tratamiento anticaída.",
+      "modoUso": "Aplicar de medios a puntas después del shampoo, dejar actuar 3 minutos y enjuagar.",
+      "ingredientes": "Aceite esencial de romero, manteca de karité, BTMS, agua."
+    },
+    {
+      "id": "7",
+      "nombre": "Jabón de Miel",
+      "detalle": "100g",
+      "precio": 10,
+      "categoria": "piel",
+      "marca": "AlmaVerde",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL6O_DLVzMKb-iECkoeFnQ3EZRJcBCaUmdxA&s",
+      "descripcion": "Jabón artesanal de miel con propiedades antibacterianas y humectantes.",
+      "modoUso": "Frotar el jabón entre las manos mojadas para hacer espuma y aplicar en el cuerpo o rostro.",
+      "ingredientes": "Miel de abeja orgánica, glicerina vegetal, aceite de almendras."
+    },
+    {
+      "id": "8",
+      "nombre": "Jabón de Rosa Mosqueta",
+      "detalle": "100g",
+      "precio": 12,
+      "categoria": "piel",
+      "marca": "BioNatur",
+      "imagen": "https://www.aquiconmiscosas.es/wp-content/uploads/2023/12/como-hacer-jabon-de-rosa-mosqueta.jpg",
+      "descripcion": "Jabón regenerador enriquecido con rosa mosqueta, ideal para atenuar cicatrices y manchas.",
+      "modoUso": "Uso diario durante la ducha o en la limpieza facial nocturna.",
+      "ingredientes": "Aceite de rosa mosqueta, base de jabón de glicerina, vitamina E."
+    },
+    {
+      "id": "9",
+      "nombre": "Jabón de Carbón Activado",
+      "detalle": "100g",
+      "precio": 11,
+      "categoria": "piel",
+      "marca": "TerraVital",
+      "imagen": "https://arelivalsoaps.com/cdn/shop/files/Carbon.jpg?v=1714839084&width=1946",
+      "descripcion": "Jabón purificante y détox que limpia los poros en profundidad y controla el exceso de sebo.",
+      "modoUso": "Lavar el rostro con movimientos circulares. Evitar el contorno de ojos. Usar 2 veces por semana.",
+      "ingredientes": "Carbón activado en polvo, aceite de coco, aceite esencial de árbol de té."
+    },
+    {
+      "id": "10",
+      "nombre": "Aceite de Almendras",
+      "detalle": "30ml",
+      "precio": 15,
+      "categoria": "piel",
+      "marca": "AlmaVerde",
+      "imagen": "https://www.ecolution.pe/cdn/shop/files/ACEITES_VEGETAL_DE_ALMENDRAS_DULCES_30ML_1024x1024@2x.png?v=1758511243",
+      "descripcion": "Aceite de almendras dulces 100% puro para hidratar la piel seca y prevenir estrías.",
+      "modoUso": "Aplicar unas gotas sobre la piel limpia y masajear hasta su completa absorción.",
+      "ingredientes": "Aceite de Prunus amygdalus dulcis (Almendra dulce) prensado en frío."
+    },
+    {
+      "id": "11",
+      "nombre": "Aceite de Ricino",
+      "detalle": "30ml",
+      "precio": 14,
+      "categoria": "piel",
+      "marca": "BioNatur",
+      "imagen": "https://www.artstoreperu.com/wp-content/uploads/2019/12/Aceite-de-Ricino.png",
+      "descripcion": "Aceite vegetal espeso, excelente para hidratar la piel y estimular el crecimiento de pestañas y cejas.",
+      "modoUso": "Aplicar con un hisopo en las cejas o con un masaje directo en zonas resecas de la piel.",
+      "ingredientes": "Aceite de ricino 100% puro."
+    },
+    {
+      "id": "12",
+      "nombre": "Desodorante de Coco",
+      "detalle": "50g",
+      "precio": 16,
+      "categoria": "piel",
+      "marca": "TerraVital",
+      "imagen": "https://http2.mlstatic.com/D_NQ_NP_780296-MLA106715692026_022026-O.webp",
+      "descripcion": "Desodorante natural libre de aluminio, que neutraliza olores y permite la transpiración natural.",
+      "modoUso": "Aplicar una pequeña cantidad en las axilas limpias y secas.",
+      "ingredientes": "Aceite de coco, bicarbonato de sodio, almidón de maíz, cera de abejas."
+    },
+    {
+      "id": "13",
+      "nombre": "Shampoo Neutro",
+      "detalle": "1 Litro",
+      "precio": 30,
+      "categoria": "insumos",
+      "marca": "AlmaVerde",
+      "imagen": "https://http2.mlstatic.com/D_922908-MLA78934022142_092024-C.jpg",
+      "descripcion": "Base de shampoo neutro libre de sal y parabenos, lista para personalizar con activos naturales.",
+      "modoUso": "Añadir extractos, aceites esenciales o principios activos hasta un máximo del 5%.",
+      "ingredientes": "Agua purificada, tensioactivos suaves, conservador cosmético."
+    },
+    {
+      "id": "14",
+      "nombre": "Aceite de Caléndula",
+      "detalle": "30ml",
+      "precio": 20,
+      "categoria": "insumos",
+      "marca": "BioNatur",
+      "imagen": "https://www.ecolution.pe/cdn/shop/products/ACEITEVEGETALCALENDULA30ML_345x@2x.png?v=1665444787",
+      "descripcion": "Aceite vegetal calmante y reparador, ideal para formulaciones destinadas a pieles sensibles.",
+      "modoUso": "Diluir antes de usar en la piel. Añadir a cremas, lociones o aceites portadores.",
+      "ingredientes": "Extracto puro de flores de caléndula."
+    },
+    {
+      "id": "15",
+      "nombre": "Aceite Esencial de Romero",
+      "detalle": "30ml",
+      "precio": 19,
+      "categoria": "insumos",
+      "marca": "TerraVital",
+      "imagen": "https://www.ecolution.pe/cdn/shop/files/ACEITES_VEGETAL_DE_ROMERO_30ML_1024x1024@2x.png?v=1736444016",
+      "descripcion": "Aceite esencial 100% puro, estimulante, perfecto para la elaboración de cosmética capilar.",
+      "modoUso": "Uso cosmético. No ingerir. Diluir en bases portadoras para masajes o productos capilares.",
+      "ingredientes": "Aceite esencial de Rosmarinus officinalis."
+    },
+    {
+      "id": "16",
+      "nombre": "Glicerina Vegetal",
+      "detalle": "250ml",
+      "precio": 12,
+      "categoria": "insumos",
+      "marca": "AlmaVerde",
+      "imagen": "https://http2.mlstatic.com/D_NQ_NP_861280-MPE75631164805_042024-O.webp",
+      "descripcion": "Humectante natural que retiene la humedad en la piel. Ideal para crear jabones, cremas y lociones.",
+      "modoUso": "Incorporar en la fase acuosa de las emulsiones o usar como solvente para extractos.",
+      "ingredientes": "Glicerina vegetal grado USP."
+    },
+    {
+      "id": "17",
+      "nombre": "Sorbato de Potasio",
+      "detalle": "100g",
+      "precio": 15,
+      "categoria": "insumos",
+      "marca": "BioNatur",
+      "imagen": "https://www.artstoreperu.com/wp-content/uploads/2020/08/Sorbato-de-Potasio-min.jpg",
+      "descripcion": "Conservante natural para cosmética natural, eficaz contra hongos y levaduras.",
+      "modoUso": "Disolver en agua. Dosis recomendada del 0.1% al 0.3% del peso total de la fórmula.",
+      "ingredientes": "Sorbato de potasio en gránulos."
+    },
+    {
+      "id": "18",
+      "nombre": "BTMS",
+      "detalle": "100g",
+      "precio": 18,
+      "categoria": "insumos",
+      "marca": "TerraVital",
+      "imagen": "https://www.smaschemicals.com/wp-content/uploads/2024/12/cera-emulsionante-btms-50-scaled.jpg",
+      "descripcion": "Cera emulsionante auto-engrosante, excelente acondicionador capilar para productos sólidos y líquidos.",
+      "modoUso": "Fundir en la fase oleosa a unos 70°C. Proporción sugerida de 2% a 10%.",
+      "ingredientes": "Metosulfato de behentrimonio y alcohol cetearílico (BTMS)."
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "1",
+      "nombre": "Admin",
+      "email": "admin@natura.com",
+      "password": "admin123",
+      "rol": "admin"
+    }
+  ],
+  "carrito": [
+    {
+      "usuarioId": "1",
+      "productoId": "7",
+      "nombre": "Jabón de Miel",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL6O_DLVzMKb-iECkoeFnQ3EZRJcBCaUmdxA&s",
+      "precio": 10,
+      "detalle": "100g",
+      "cantidad": 1,
+      "id": "q-4FCxJmVP8"
+    },
+    {
+      "usuarioId": "1",
+      "productoId": "7",
+      "nombre": "Jabón de Miel",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL6O_DLVzMKb-iECkoeFnQ3EZRJcBCaUmdxA&s",
+      "precio": 10,
+      "detalle": "100g",
+      "cantidad": 1,
+      "id": "Uqo1SitS2pg"
+    },
+    {
+      "usuarioId": "1",
+      "productoId": "8",
+      "nombre": "Jabón de Rosa Mosqueta",
+      "imagen": "https://www.aquiconmiscosas.es/wp-content/uploads/2023/12/como-hacer-jabon-de-rosa-mosqueta.jpg",
+      "precio": 12,
+      "detalle": "100g",
+      "cantidad": 1,
+      "id": "BhfbJ3Le97k"
+    },
+    {
+      "usuarioId": "1",
+      "productoId": "11",
+      "nombre": "Aceite de Ricino",
+      "imagen": "https://www.artstoreperu.com/wp-content/uploads/2019/12/Aceite-de-Ricino.png",
+      "precio": 14,
+      "detalle": "30ml",
+      "cantidad": 1,
+      "id": "-6vZUQMFI3E"
+    },
+    {
+      "usuarioId": "1",
+      "productoId": "7",
+      "nombre": "Jabón de Miel",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL6O_DLVzMKb-iECkoeFnQ3EZRJcBCaUmdxA&s",
+      "precio": 10,
+      "detalle": "100g",
+      "cantidad": 1,
+      "id": "WyP44ol8TZg"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
