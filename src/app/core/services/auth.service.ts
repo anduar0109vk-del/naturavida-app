@@ -1,4 +1,5 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, signal, computed, inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from '../models/usuario.model';
 import { Observable, tap } from 'rxjs';
@@ -12,10 +13,14 @@ export class AuthService {
   readonly isLoggedIn = computed(() => this._currentUser() !== null);
   readonly isAdmin = computed(() => this._currentUser()?.rol === 'admin');
 
+  private platformId = inject(PLATFORM_ID);
+
   constructor(private http: HttpClient) {
-    const stored = localStorage.getItem('natura_user');
-    if (stored) {
-      this._currentUser.set(JSON.parse(stored));
+    if (isPlatformBrowser(this.platformId)) {
+      const stored = localStorage.getItem('natura_user');
+      if (stored) {
+        this._currentUser.set(JSON.parse(stored));
+      }
     }
   }
 
@@ -24,7 +29,9 @@ export class AuthService {
       tap(users => {
         if (users.length > 0) {
           this._currentUser.set(users[0]);
-          localStorage.setItem('natura_user', JSON.stringify(users[0]));
+          if (isPlatformBrowser(this.platformId)) {
+            localStorage.setItem('natura_user', JSON.stringify(users[0]));
+          }
         }
       })
     );
@@ -34,13 +41,17 @@ export class AuthService {
     return this.http.post<Usuario>(this.apiUrl, { ...usuario, rol: 'cliente' }).pipe(
       tap(newUser => {
         this._currentUser.set(newUser);
-        localStorage.setItem('natura_user', JSON.stringify(newUser));
+        if (isPlatformBrowser(this.platformId)) {
+          localStorage.setItem('natura_user', JSON.stringify(newUser));
+        }
       })
     );
   }
 
   logout(): void {
     this._currentUser.set(null);
-    localStorage.removeItem('natura_user');
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.removeItem('natura_user');
+    }
   }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -23,8 +24,11 @@ import { CarritoService } from './core/services/carrito.service';
 export class App implements OnInit {
   private authService = inject(AuthService);
   private carritoService = inject(CarritoService);
+  private platformId = inject(PLATFORM_ID);
 
   ngOnInit(): void {
-    this.carritoService.cargarCarrito();
+    if (isPlatformBrowser(this.platformId)) {
+      this.carritoService.cargarCarrito();
+    }
   }
 }

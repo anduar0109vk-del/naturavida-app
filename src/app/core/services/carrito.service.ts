@@ -1,4 +1,5 @@
-import { Injectable, signal, computed, inject } from '@angular/core';
+import { Injectable, signal, computed, inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ItemCarrito } from '../models/carrito.model';
 import { Producto } from '../models/producto.model';
@@ -10,6 +11,7 @@ export class CarritoService {
   private apiUrl = 'http://localhost:3000/carrito';
   private _items = signal<ItemCarrito[]>([]);
   private authService = inject(AuthService);
+  private platformId = inject(PLATFORM_ID);
 
   readonly items = this._items.asReadonly();
   readonly totalItems = computed(() => this._items().reduce((acc, i) => acc + i.cantidad, 0));
@@ -20,6 +22,7 @@ export class CarritoService {
   constructor(private http: HttpClient) {}
 
   private getGuestId(): number {
+    if (!isPlatformBrowser(this.platformId)) return -1;
     const stored = localStorage.getItem('natura_guest_id');
     if (stored) return parseInt(stored, 10);
     const newId = -Math.floor(Math.random() * 1000000) - 1;
@@ -85,6 +88,7 @@ export class CarritoService {
   }
 
   sincronizarCarrito(userId: number): Observable<any> {
+    if (!isPlatformBrowser(this.platformId)) return of(null);
     const guestIdStr = localStorage.getItem('natura_guest_id');
     if (!guestIdStr) {
       this.cargarCarrito();
@@ -124,7 +128,9 @@ export class CarritoService {
             
             return forkJoin(requests).pipe(
               tap(() => {
-                localStorage.removeItem('natura_guest_id');
+                if (isPlatformBrowser(this.platformId)) {
+                  localStorage.removeItem('natura_guest_id');
+                }
                 this.cargarCarrito();
               })
             );

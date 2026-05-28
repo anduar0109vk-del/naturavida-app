@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, NgZone, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, ActivatedRoute } from '@angular/router';
@@ -21,6 +21,8 @@ export class CatalogoComponent implements OnInit {
   private authService = inject(AuthService);
   private route = inject(ActivatedRoute);
   private router = inject(Router);
+  private zone = inject(NgZone);
+  private cdr = inject(ChangeDetectorRef);
 
   todosLosProductos: Producto[] = [];
   productosFiltrados: Producto[] = [];
@@ -42,14 +44,26 @@ export class CatalogoComponent implements OnInit {
   toast = { visible: false, mensaje: '' };
 
   ngOnInit(): void {
-    this.productoService.getProductos().subscribe(productos => {
-      this.todosLosProductos = productos;
-      this.cargando = false;
-      this.route.queryParams.subscribe(params => {
-        if (params['categoria']) this.categoriaActual = params['categoria'];
-        if (params['search']) this.textoBusqueda = params['search'];
-        this.filtrar();
-      });
+    this.route.queryParams.subscribe(params => {
+      if (params['categoria']) this.categoriaActual = params['categoria'];
+      if (params['search']) this.textoBusqueda = params['search'];
+    });
+
+    this.productoService.getProductos().subscribe({
+      next: productos => {
+        this.zone.run(() => {
+          this.todosLosProductos = productos;
+          this.cargando = false;
+          this.filtrar();
+          this.cdr.detectChanges();
+        });
+      },
+      error: () => {
+        this.zone.run(() => {
+          this.cargando = false;
+          this.cdr.detectChanges();
+        });
+      }
     });
   }
 
