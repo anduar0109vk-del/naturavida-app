@@ -8,6 +8,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,5 +20,5 @@ export const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'contacto', component: ContactoComponent },
-  { path: '**', redirectTo: '' }
+  { path: '**', component: NotFoundComponent }
 ];
